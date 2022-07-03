@@ -1,4 +1,5 @@
 ﻿using Intrumentacao2.Areas.Identity.Data;
+using Intrumentacao2.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -23,7 +24,16 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 
         builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
 
+        builder.Entity<Instrumentos>()
+            .HasIndex(x => x.Tag).IsUnique();
+
     }
+
+
+
+    public DbSet<Instrumentos> Intrumentos { get; set; }
+
+
 }
 
 public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>

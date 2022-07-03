@@ -1,0 +1,67 @@
+﻿@model Intrumentacao2.Models.Instrumentos
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Instrumentos</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tag)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tag)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Principio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Principio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Range)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Range)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fabricante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fabricante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Protocolo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Protocolo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quadratica)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quadratica)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

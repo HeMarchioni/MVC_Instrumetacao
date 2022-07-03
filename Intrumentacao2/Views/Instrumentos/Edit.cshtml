@@ -1,0 +1,70 @@
+﻿@model Intrumentacao2.Models.Instrumentos
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Instrumentos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Tag" class="control-label"></label>
+                <input asp-for="Tag" class="form-control" />
+                <span asp-validation-for="Tag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Principio" class="control-label"></label>
+                <input asp-for="Principio" class="form-control" />
+                <span asp-validation-for="Principio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Range" class="control-label"></label>
+                <input asp-for="Range" class="form-control" />
+                <span asp-validation-for="Range" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fabricante" class="control-label"></label>
+                <input asp-for="Fabricante" class="form-control" />
+                <span asp-validation-for="Fabricante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modelo" class="control-label"></label>
+                <input asp-for="Modelo" class="form-control" />
+                <span asp-validation-for="Modelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Protocolo" class="control-label"></label>
+                <input asp-for="Protocolo" class="form-control" />
+                <span asp-validation-for="Protocolo" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Quadratica" /> @Html.DisplayNameFor(model => model.Quadratica)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Intrumentacao2.Models.Instrumentos>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Principio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Range)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fabricante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Protocolo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quadratica)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Principio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Range)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fabricante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Protocolo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quadratica)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
