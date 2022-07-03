@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Intrumentacao2.Areas.Identity.Data;
 using Intrumentacao2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Intrumentacao2.Controllers
 {
@@ -46,6 +47,7 @@ namespace Intrumentacao2.Controllers
         }
 
         // GET: Instrumentos/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -68,6 +70,7 @@ namespace Intrumentacao2.Controllers
         }
 
         // GET: Instrumentos/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Intrumentos == null)
@@ -86,6 +89,7 @@ namespace Intrumentacao2.Controllers
         // POST: Instrumentos/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Tag,Descricao,Principio,Range,Fabricante,Modelo,Protocolo,Quadratica")] Instrumentos instrumentos)
@@ -119,6 +123,7 @@ namespace Intrumentacao2.Controllers
         }
 
         // GET: Instrumentos/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Intrumentos == null)
@@ -137,6 +142,7 @@ namespace Intrumentacao2.Controllers
         }
 
         // POST: Instrumentos/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
